@@ -17,7 +17,7 @@
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["assets/js/_content/content_script.js","assets/js/_content/index.js"],
+      "js": ["assets/js/_content/iframe.js","assets/js/_content/index.js"],
       "css": ["assets/css/content.css"],
       "run_at": "document_start"
     }
@@ -39,7 +39,7 @@
   ],
   "web_accessible_resources": [
     "popup.html",
-    "/assets/js/myapi.js"
+    "/assets/img/*"
   ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

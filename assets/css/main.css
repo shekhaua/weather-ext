@@ -95,18 +95,25 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-body {
-    background-color: #8baba6;
+@font-face {
+    font-family: Dosis;
+    src: url(../fonts/Dosis-ExtraLight.ttf);
+    font-weight: 200;
 }
-#today-region {
+
+body {
+    font-family: Dosis;
+    background: url("../img/galactic_bkg.jpg");
 
 }
+
 .today {
     width: 198px;
     height: 172px;
     border: 1px solid white;
     margin: 5px;
     color: white;
+    background-color: rgba(139,171,166, 0.6);
 }
 .header {
     margin: 0 10px;
@@ -115,19 +122,26 @@ body {
 .wrap {
     width: 124px;
     margin: 0 auto;
+    text-align: center;
 }
 .wrap .label {
-    font-size: 2em;
+    font-size: 2.4em;
     text-transform: uppercase;
-    float: left;
-    margin-right: 8px;
+    margin-right: 3px;
+    display: inline-block;
 }
-.wrap .date {text-align: center;
+.wrap .date {
+    display: inline-block;
+    line-height: .8em;
+    position: relative;
+    top: 1px;
+    font-size: 1.3em;
 }
 .day-month {
     margin: 0;
     font-size: .8em;
     vertical-align: bottom;
+    display: block;
 }
 .year {
     margin: 0;
@@ -149,11 +163,12 @@ body {
     line-height: .9;
     margin:0;
 }
-.conditions img {
-    display: block;
+.conditions i {
+    font-size: 3em;
     float: left;
     margin-right: 5px;
 }
+
 .conditions .description {
     margin: 0;
     text-transform: uppercase;
@@ -167,6 +182,7 @@ body {
     margin: 5px 0 0 5px;
     height: 94px;
     color: white;
+    background-color: rgba(139,171,166, 0.6);
 }
 .forecast .header {
     text-align: center;
@@ -181,39 +197,20 @@ body {
     box-sizing: border-box;
     height: 40px;
 }
-.forecast .day img,
-.forecast .night img {
-    display: block;
-    float: left;
-    width: 20px;
-    margin-left: 8px;
-    margin-top: 8px;
-}
 
-.forecast .day {
+.forecast .day,
+.forecast .night{
     display: inline-block;
     border-right: 1px solid white;
-}
-
-.forecast .day img {
-
-}
-
-.forecast .temp {
-    font-size: 0.8em;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 1.3em;
 }
 
 .forecast .night {
-
+    border-right: none;
 }
 
-.forecast .night img{
-
-}
-
-.forecast .night .temp{
-
-}
 .forecast .footer {
     text-align: center;
 }
