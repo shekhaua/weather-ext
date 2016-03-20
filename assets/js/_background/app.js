@@ -22,11 +22,6 @@ var BKG = (function(BKG, $) {
                     setBrowserActionIcon(data);
                     setBrowserActionBadge(data);
                 });
-
-                /*var popupView = getPopupView();
-                if(popupView) { // Only exists when visible.
-                    popupView.APP.WeatherApp.Controller.load();
-                }*/
             }
         });
 
@@ -55,8 +50,9 @@ var BKG = (function(BKG, $) {
 
             if(items.showUiInPopup) {
                 // enable popup
-                //chrome.browserAction.setPopup({ popup: 'popup.html'});
-                //chrome.browserAction.enable();
+                chrome.browserAction.setPopup({ popup: 'popup.html'});
+                chrome.browserAction.onClicked.removeListener(onBrowserActionClicked);
+                chrome.browserAction.enable();
             } else {
                 chrome.browserAction.setPopup({ popup: ''})
 

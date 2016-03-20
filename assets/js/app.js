@@ -11,12 +11,8 @@ define(['marionette', 'common/window', 'config/marionette/application'], functio
         footerRegion: '#footer-region'
     });
 
-    // APP EVENTS ---------------
-    //"before:start" / onBeforeStart: fired just before the Application starts and before the initializers are executed.
-    APP.on("before:start", function(options){});
-
     //"start" / onStart: fires after the Application has started and after the initializers have been executed.
-    APP.on("start", function(options) {
+    APP.on("start", function() {
 
         if (Backbone.history){
             /*
@@ -24,6 +20,11 @@ define(['marionette', 'common/window', 'config/marionette/application'], functio
             * */
             require(['apps/weather', 'port'], function () {
                 Backbone.history.start(/*{pushState: true}*/);
+
+                // if we wanna show browser action popup / otherwise show iframe
+                if(window.CONFIG && window.CONFIG.startOnAppLoaded) {
+                    APP.trigger('load:app:weather');
+                }
             });
         }
     });

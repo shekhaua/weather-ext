@@ -2,7 +2,7 @@ define(['app'], function(APP){
 
     function onMessageReceived(request, sender, sendResponse){
         if (!request.message) return;
-        console.log("app.js", request, sender);
+        //console.log("app.js", request, sender);
         switch (request.message){
             case 'open-modal':
                 APP.trigger('load:app:weather');

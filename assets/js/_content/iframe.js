@@ -20,7 +20,7 @@ var FRAME = (function(){
         frame.setAttribute('marginheight', '0');
         frame.setAttribute('marginwidth', '0');
         frame.setAttribute('scrolling', 'no');
-        frame.src = chrome.runtime.getURL('popup.html');
+        frame.src = chrome.runtime.getURL('web.html');
         var placeholder = document.getElementsByTagName('body')[0];
         placeholder.appendChild(frame);
 
